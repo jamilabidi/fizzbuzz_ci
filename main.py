@@ -10,9 +10,9 @@ def fb_access():
     if request.GET.num:
         number = request.GET.number
 
-        return template(join(os.getcwd(), 'display-result'), result=main(number))
+        return template('display-result', result=main(number))
     else:
-        return template(join(os.getcwd(), 'fb_access.tpl'))
+        return template('fb_access.tpl')
 
 
 def main(n):
@@ -47,5 +47,6 @@ def iteration(value):
         s += str(fizzbuzz(i))
     return s
 
-
-application = default_app()
+debug(True)
+run(reloader=True)
+# application = default_app()
