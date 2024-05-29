@@ -1,16 +1,18 @@
+import os
+from os.path import join
+
 from bottle import route, run, debug, template, request, static_file, default_app, error
 
 
 @route('/fizzbuzz', method='GET')
-# @route('/fizzbuzz', method='POST')
 def fb_access():
     print("request : " + request.GET.number)
     if request.GET.num:
         number = request.GET.number
 
-        return template('mysite/display-result', result=main(number))
+        return template(join(os.getcwd(), 'display-result'), result=main(number))
     else:
-        return template('mysite/fb_access.tpl')
+        return template(join(os.getcwd(), 'fb_access.tpl'))
 
 
 def main(n):
