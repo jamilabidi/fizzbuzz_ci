@@ -1,5 +1,6 @@
 import json
 import subprocess
+import time
 
 import requests
 
@@ -10,9 +11,12 @@ domain_name = 'aphunk.pythonanywhere.com'
 
 
 def deploiement_access():
+    send_push()
+    time.sleep(25)
     console_id = open_console()
     print(console_id)
     send_pull(console_id)
+    time.sleep(10)
     reload_site()
     # kill_them_all(console_id)
 
@@ -77,6 +81,12 @@ def kill_them_all(id):
         print("la console est fermée")
     else:
         print("la console n'est pas fermée")
+
+
+def send_push():
+    message = input("Tapes ton message pour commit :")
+    subprocess.run(["git", "commit", "-am", f"{message}"])
+    subprocess.run(["git", "push", "origin", "main"])
 
 
 deploiement_access()
