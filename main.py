@@ -18,8 +18,8 @@ def fb_access():
         return template('fb_access.tpl')
 
 
-# application = default_app()
+application = default_app()
 
-if __name__ == '__main__':
-    debug(True)
-    run()
+# if __name__ == '__main__':
+#     debug(True)
+#     run()
