@@ -1,6 +1,6 @@
 import pytest
 
-from main import fizzbuzz, fizzbuzzstr
+from fizzbuzz import fizzbuzz, fizzbuzzstr
 
 
 @pytest.mark.parametrize("value", [3, 6, 9, 12, 18, 21])
