@@ -13,7 +13,8 @@ domain_name = 'aphunk.pythonanywhere.com'
 def deploiement_access():
     send_push()
     time.sleep(20)
-    console_id = open_console()
+    console_id = 34039547
+    # time.sleep(15)
     print(console_id)
     send_pull(console_id)
     time.sleep(10)
