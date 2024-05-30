@@ -7,9 +7,6 @@ from os.path import join
 from bottle import route, run, debug, template, request, static_file, default_app, error
 
 
-
-
-
 @route('/fizzbuzz', method='GET')
 def fb_access():
     print("request : " + request.GET.number)
@@ -21,10 +18,8 @@ def fb_access():
         return template('fb_access.tpl')
 
 
+application = default_app()
 
-
-
-if __name__ == '__main__':
-    # debug(True)
-    run()
-# application = default_app()
+# if __name__ == '__main__':
+#     debug(True)
+#     run()
